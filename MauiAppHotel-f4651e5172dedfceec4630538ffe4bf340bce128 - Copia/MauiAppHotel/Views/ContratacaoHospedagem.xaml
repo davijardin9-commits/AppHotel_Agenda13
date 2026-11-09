@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
+             Title="App Hotel"
+             NavigationPage.HasNavigationBar="True"
+             BackgroundColor="#EFF6FF">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="20"
+                             MaximumWidthRequest="600"
+                             HorizontalOptions="Fill">
+
+            <Label Text="HOTEL JARDIN"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="#17365D"
+                   HorizontalTextAlignment="Center" />
+
+            <Label Text="Planeje sua hospedagem"
+                   FontSize="18"
+                   TextColor="#475569"
+                   HorizontalTextAlignment="Center" />
+
+            <Border Padding="20"
+                    BackgroundColor="White"
+                    Stroke="#CBD5E1"
+                    StrokeShape="RoundRectangle 16">
+
+                <VerticalStackLayout Spacing="18">
+
+                    <Label Text="Hóspedes"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           TextColor="#17365D" />
+
+                    <Grid RowDefinitions="Auto,Auto"
+                          ColumnDefinitions="*,Auto,Auto"
+                          RowSpacing="12"
+                          ColumnSpacing="15">
+
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               Text="Adultos"
+                               TextColor="#334155"
+                               VerticalOptions="Center" />
+
+                        <Label Grid.Row="0"
+                               Grid.Column="1"
+                               Text="{Binding Value}"
+                               BindingContext="{x:Reference stp_adultos}"
+                               TextColor="#17365D"
+                               VerticalOptions="Center" />
+
+                        <Stepper Grid.Row="0"
+                                 Grid.Column="2"
+                                 x:Name="stp_adultos"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1" />
+
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               Text="Crianças"
+                               TextColor="#334155"
+                               VerticalOptions="Center" />
+
+                        <Label Grid.Row="1"
+                               Grid.Column="1"
+                               Text="{Binding Value}"
+                               BindingContext="{x:Reference stp_criancas}"
+                               TextColor="#17365D"
+                               VerticalOptions="Center" />
+
+                        <Stepper Grid.Row="1"
+                                 Grid.Column="2"
+                                 x:Name="stp_criancas"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1" />
+
+                    </Grid>
+
+                    <Label Text="Escolha sua suíte"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           TextColor="#17365D" />
+
+                    <Picker x:Name="pck_quarto"
+                            Title="Selecione sua acomodação"
+                            TitleColor="#475569"
+                            TextColor="#17365D"
+                            BackgroundColor="#F1F5F9" />
+
+                    <Label Text="Período da estadia"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           TextColor="#17365D" />
+
+                    <Label Text="Check-in"
+                           TextColor="#334155" />
+
+                    <DatePicker x:Name="dtpck_checkin"
+                                Format="dd/MM/yyyy"
+                                TextColor="#17365D"
+                                BackgroundColor="#F1F5F9" />
+
+                    <Label Text="Check-out"
+                           TextColor="#334155" />
+
+                    <DatePicker x:Name="dtpck_checkout"
+                                Format="dd/MM/yyyy"
+                                TextColor="#17365D"
+                                BackgroundColor="#F1F5F9" />
+
+                    <Button Text="Avançar"
+                            BackgroundColor="#17365D"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HeightRequest="50" />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="Conforto para sua próxima viagem."
+                   TextColor="#475569"
+                   HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
